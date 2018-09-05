@@ -1,0 +1,23 @@
+<main>
+  <button [routerLink]="['/restaurants/new']">New Restaurant</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Restaurant</th>
+        <th>Cuisine</th>
+        <th>Actions Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of restaurants">
+        <td>{{r.restaurant}}</td>
+        <td>{{r.cuisine}}</td>
+        <td>
+          <button [routerLink]="['/restaurants', r._id]">Read Reviews</button>
+          <button [routerLink]="['/restaurants/edit/', r._id]">Update</button>
+          <button *ngIf="hide" (click)="removeRestaurant(r._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>

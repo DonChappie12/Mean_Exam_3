@@ -1,0 +1,19 @@
+<main>
+  <h3>Write a review for {{restaurant.restaurant}}</h3>
+  <form (submit)="createReview(restaurant._id)">
+    <p *ngFor="let x of errors" style="color: #ac6eff">{{x}}</p>
+    <p>Your Name: <input type="text" name="name" [(ngModel)]="newReview.name"></p>
+    <p>Stars: <input type="number" name="star" min="1" max="5" [(ngModel)]="newReview.star"></p>
+    <p>Your Review: <input type="text" name="description" [(ngModel)]="newReview.description"></p>
+    <button [routerLink]="['/restaurants', restaurant._id]">Cancel</button>
+    <input type="submit" value="Submit">
+  </form>
+</main>
+<!-- <select name='city'>
+    <option value="Select">Select</option>
+    <option value='Seattle'>Seattle</option>
+    <option value='Los Angeles'>Los Angeles</option>
+    <option value='Dallas'>Dallas</option>
+    <option value='Tulsa'>Tulsa</option>
+    <option value='Chicago'>Chicago</option>
+</select> -->

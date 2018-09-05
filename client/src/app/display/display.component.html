@@ -1,0 +1,21 @@
+<main>
+  <h3>Reviews for {{restaurant.restaurant}}</h3>
+  <button [routerLink]="['/restaurants/review/',restaurant._id]">New Review</button>
+  <button [routerLink]="['/restaurants']">Home</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Customers</th>
+        <th>Stars</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rev of restaurant.review">
+        <td>{{rev.name}}</td>
+        <td>{{rev.star}}</td>
+        <td>{{rev.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
